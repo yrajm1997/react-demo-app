@@ -1,34 +1,33 @@
 import './App.css';
-import langimage from './assets/langchain-icon.svg'
+import Hyperlink from './components/hyperlink';
+
 
 function App() {
+
+  const linkData = {
+    link1: {
+      linkName: "Sklearn",
+      linkAddress: "https://scikit-learn.org/stable/",
+      logoImg: "None"
+    },
+    link2: {
+      linkName: "LangChain",
+      linkAddress: "https://www.langchain.com/",
+      logoImg: "/images/langchain-icon.svg"
+    },
+    link3: {
+      linkName: "Learn React",
+      linkAddress: "https://reactjs.org",
+      logoImg: "/logo192.png"
+    }
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <a className="App-link" 
-           href="https://scikit-learn.org/stable/"
-           target="_blank"
-           rel="noopener noreferrer"
-        >
-          Sklearn
-        </a>
-        <a className="App-link" 
-           href="https://www.langchain.com/"
-           target="_blank"
-           rel="noopener noreferrer"
-        >
-          <img src={langimage} width="30px" alt="Langchain"></img>
-          LangChain
-        </a>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="/logo192.png" width="20px" alt="React"></img>
-          Learn React
-        </a>
+        <Hyperlink {...linkData.link1}/>
+        <Hyperlink {...linkData.link2}/>
+        <Hyperlink {...linkData.link3}/>
       </header>
       <br></br>
       <div className="div1"></div>
